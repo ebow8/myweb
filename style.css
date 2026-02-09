@@ -45,7 +45,7 @@ body {
 .nav a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .btn {
@@ -54,23 +54,6 @@ body {
     border-radius: 8px;
     color: #fff;
     text-decoration: none;
-}
-
-/* ================= MENU TOGGLE ================= */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    width: 28px;
-    height: 3px;
-    background: white;
-    border-radius: 3px;
 }
 
 /* ================= HERO ================= */
@@ -97,15 +80,6 @@ body {
     margin-bottom: 15px;
 }
 
-.overlay button {
-    background: #2da6ff;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-}
-
 /* ================= SERVICES ================= */
 .services {
     padding: 80px 20px;
@@ -116,65 +90,20 @@ body {
 .service-grid {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 25px;
 }
 
-/* ===== مربع الخدمة ===== */
+/* مربع الخدمة */
 .service {
     background: #f5f5f5;
     padding: 45px 25px;
     border-radius: 18px;
     cursor: pointer;
-
-    /* أبيض وأسود */
     filter: grayscale(100%);
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        filter 0.4s ease,
-        background 0.4s ease,
-        color 0.4s ease;
+    transition: all 0.35s ease;
 }
 
-/* الأيقونة */
-.service span {
-    font-size: 65px;
-    display: block;
-    margin-bottom: 18px;
-    transition: transform 0.4s ease;
-}
-
-/* النص */
-.service p {
-    font-size: 20px;
-    font-weight: 600;
-    transition: font-weight 0.4s ease, color 0.4s ease;
-}
-
-/* ===== عند المرور ===== */
-/* ================= SERVICES FINAL ================= */
-
-/* الحالة الافتراضية: أبيض وأسود + خط عريض */
-.service {
-    background: #f5f5f5;
-    border-radius: 18px;
-    padding: 45px 25px;
-    cursor: pointer;
-
-    filter: grayscale(100%);
-    transform: scale(1);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        filter 0.35s ease,
-        background 0.35s ease,
-        color 0.35s ease;
-}
-
-/* الأيقونة */
 .service span {
     font-size: 65px;
     display: block;
@@ -182,47 +111,28 @@ body {
     transition: transform 0.35s ease;
 }
 
-/* النص: عريض دائمًا */
 .service p {
     font-size: 20px;
-    font-weight: 800; /* 👈 خط عريض */
-    transition: color 0.35s ease;
+    font-weight: 800;
 }
 
-/* ================= DESKTOP HOVER (ماوس فقط) ================= */
+/* تأثير الكمبيوتر */
 @media (hover: hover) and (pointer: fine) {
-
     .service:hover {
         background: linear-gradient(135deg, #0b2341, #123f74);
-        color: #ffffff;
-
+        color: white;
         filter: grayscale(0%);
-        transform: translateY(-12px) scale(1.08); /* 👈 المربع كله يكبر */
+        transform: translateY(-12px) scale(1.08);
         box-shadow: 0 22px 45px rgba(0,0,0,0.25);
     }
 
     .service:hover span {
-        transform: scale(1.2); /* تكبير خفيف للأيقونة */
+        transform: scale(1.25);
     }
 }
 
-/* ================= MOBILE (tap) ================= */
-.service.active {
-    background: linear-gradient(135deg, #0b2341, #123f74);
-    color: #ffffff;
-
-    filter: grayscale(0%);
-    transform: scale(1.06);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
-}
-
-.service.active span {
-    transform: scale(1.2);
-}
-
-/* ================= MOBILE GRID ================= */
+/* موبايل */
 @media (max-width: 768px) {
-
     .service-grid {
         grid-template-columns: 1fr;
     }
@@ -230,174 +140,18 @@ body {
     .service {
         filter: grayscale(0%);
     }
-
-    .service span {
-        font-size: 50px;
-    }
 }
 
-/* نبض */
-@keyframes pulse {
-    0% { transform: scale(1.25); }
-    50% { transform: scale(1.4); }
-    100% { transform: scale(1.25); }
-}
-
-/* ================= CONTACT ================= */
-.contact {
-    background: #0b2341;
-    color: white;
-    padding: 70px 20px;
-    text-align: center;
-}
-
-.contact-icons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.contact-icons a {
-    font-size: 34px;
-    color: white;
-}
-
-/* ================= WHATSAPP ================= */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #25D366;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 28px;
-    z-index: 9999;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        gap: 20px;
-        padding: 25px 0;
-        display: none;
-    }
-
-    .nav.open {
-        display: flex;
-    }
-
-    .nav a {
-        color: #0b2341;
-        font-size: 18px;
-    }
-
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service {
-        filter: grayscale(0%);
-        transform: none;
-    }
-
-    .service span {
-        font-size: 50px;
-    }
-
-    .overlay h1 {
-        font-size: 22px;
-    }
-}
-/* ================= SERVICES EFFECT ================= */
-
-/* افتراضي: أبيض وأسود */
-.service {
-    filter: grayscale(100%);
-    transition: all 0.35s ease;
-}
-
-/* كمبيوتر (hover) */
-@media (hover: hover) {
-    .service:hover {
-        background: #1e3a5f;
-        color: #fff;
-        filter: grayscale(0%);
-        transform: translateY(-15px) scale(1.08);
-        box-shadow: 0 18px 40px rgba(0,0,0,0.25);
-    }
-
-    .service:hover span {
-        animation: pulse 1.2s infinite;
-        transform: scale(1.3);
-    }
-
-    .service:hover p {
-        font-weight: 800;
-    }
-}
-
-/* موبايل (tap) */
-.service.active {
-    background: #1e3a5f;
-    color: #fff;
-    filter: grayscale(0%);
-    transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
-
-.service.active span {
-    animation: pulse 1.2s infinite;
-    transform: scale(1.3);
-}
-
-.service.active p {
-    font-weight: 800;
-}
-
-/* نبض */
-@keyframes pulse {
-    0% { transform: scale(1.2); }
-    50% { transform: scale(1.4); }
-    100% { transform: scale(1.2); }
-}
-
+/* ================= WHY US ================= */
 .why-us {
     padding: 80px 20px;
     background: #f8fafc;
     text-align: center;
 }
 
-.why-us h2 {
-    font-size: 34px;
-    margin-bottom: 10px;
-    color: #0b2341;
-}
-
-.why-desc {
-    color: #6b7280;
-    margin-bottom: 40px;
-}
-
 .why-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 25px;
     max-width: 1200px;
     margin: auto;
@@ -410,78 +164,29 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.why-box h3 {
-    color: #0b2341;
-    margin-bottom: 10px;
-}
-
-
-.process {
-    padding: 80px 20px;
-    background: white;
-    text-align: center;
-}
-
-.process h2 {
-    font-size: 34px;
-    margin-bottom: 40px;
-    color: #0b2341;
-}
-
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.step {
-    background: #0b2341;
-    color: white;
-    padding: 30px;
-    border-radius: 16px;
-}
-
-.step span {
-    font-size: 28px;
-    font-weight: 800;
-    display: block;
-    margin-bottom: 10px;
-}
-.footer {
-    background: #0b2341;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
-}
-
-
-/* ===== FOOTER CONTACT ===== */
+/* ================= CONTACT FOOTER ================= */
 .contact-footer {
     background: #0b2341;
     color: white;
     text-align: center;
-    padding: 80px 20px 100px;
-    margin-top: 120px;
+    padding: 40px 20px 30px; /* 👈 هنا الحل */
 }
 
 .contact-footer h2 {
-    font-size: 30px;
-    margin-bottom: 25px;
+    font-size: 28px;
+    margin-bottom: 20px;
     font-weight: 800;
 }
 
 .contact-icons {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 28px;
 }
 
 .contact-icons a {
     color: white;
-    font-size: 36px;
+    font-size: 34px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -489,72 +194,29 @@ body {
     transform: scale(1.25);
     color: #00c2ff;
 }
-/* ====== تواصل معنا (Footer Contact) ====== */
 
-.contact-footer {
-    background: #0b2341;
-    color: #ffffff;
-    padding: 40px 20px30px;
-    text-align: center;
-    width: 100%;
-}
-
-.contact-footer h2 {
-    font-size: 32px;
-    margin-bottom: 25px;
-    font-weight: 800;
-}
-
-/* أيقونات التواصل */
-.contact-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-    margin-top: 20px;
-}
-
-.contact-icons a {
-    color: #ffffff;
-    font-size: 38px;
-    transition: 
-        transform 0.3s ease,
-        color 0.3s ease;
-}
-
-/* حركة عند المرور */
-.contact-icons a:hover {
-    color: #00c2ff;
-    transform: scale(1.25);
-}
-
-/* ====== الفوتر السفلي ====== */
+/* ================= FOOTER ================= */
 .footer {
     background: #081a30;
-    color: #ffffff;
+    color: white;
     text-align: center;
-    padding: 20px 15px;
+    padding: 14px;
     font-size: 14px;
 }
 
-/* ====== موبايل ====== */
-@media (max-width: 768px) {
-
-    .contact-footer {
-        padding: 30px 15px 25px;
-    }
-
-    .contact-footer h2 {
-        font-size: 24px;
-    }
-
-    .contact-icons a {
-        font-size: 32px;
-    }
+/* ================= WHATSAPP ================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    font-size: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
-
-
-
-
-
-
