@@ -2,17 +2,16 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/articles"
-public_folder: "/images/articles"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "articles"
+  - name: "posts"
     label: "المقالات"
-    folder: "articles"
+    folder: "posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "العنوان", name: "title", widget: "string" }
-      - { label: "الصورة الرئيسية", name: "image", widget: "image" }
+      - { label: "الصورة", name: "image", widget: "image" }
       - { label: "المحتوى", name: "body", widget: "markdown" }
-      - { label: "تاريخ النشر", name: "date", widget: "datetime" }
