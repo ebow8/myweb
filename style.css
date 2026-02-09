@@ -22,13 +22,14 @@ body {
 }
 
 .header-hero {
-    background: rgba(11, 35, 65, 0.85);
+    background: rgba(11, 35, 65, 0.9);
     padding: 12px 0;
 }
 
 .header-scroll {
-    background: rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 8px 0;
     transform: translateY(-100%);
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
@@ -42,9 +43,13 @@ body {
     align-items: center;
 }
 
-.logo-hero,
-.logo-scroll {
+/* لوغوهات */
+.logo-hero {
     height: 60px;
+}
+
+.logo-scroll {
+    height: 50px;
 }
 
 /* ================= القائمة ================= */
@@ -68,6 +73,11 @@ body {
     color: #0b2341;
 }
 
+.nav.dark a:hover {
+    color: #00c2ff;
+}
+
+/* زر */
 .btn {
     background: #00c2ff;
     color: white;
@@ -75,6 +85,11 @@ body {
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+}
+
+.btn.small {
+    padding: 8px 14px;
+    font-size: 14px;
 }
 
 /* ================= Dropdown ================= */
@@ -103,14 +118,16 @@ body {
     color: #0b2341;
 }
 
+.dropdown-menu a:hover {
+    background: #f0f4f8;
+}
+
 /* ================= الغلاف ================= */
 .hero {
+    background: url('images/hero2.jpg') center / cover no-repeat;
     min-height: 100vh;
-    background: url('images/hero2.jpg') center center / cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    padding: 180px 20px 120px;
+    text-align: center;
 }
 
 .overlay {
@@ -119,7 +136,7 @@ body {
     border-radius: 14px;
     color: white;
     max-width: 720px;
-    text-align: center;
+    margin: auto;
 }
 
 .overlay h1 {
@@ -143,7 +160,7 @@ body {
 /* ================= الخدمات ================= */
 .services {
     padding: 90px 20px;
-    background: white;
+    background: #ffffff;
     text-align: center;
 }
 
@@ -159,7 +176,8 @@ body {
     background: #f7f7f7;
     border-radius: 18px;
     padding: 50px 25px;
-    transition: 0.35s;
+    cursor: pointer;
+    transition: all 0.35s ease;
     filter: grayscale(100%);
 }
 
@@ -167,13 +185,25 @@ body {
     font-size: 70px;
     display: block;
     margin-bottom: 20px;
+    transition: 0.35s;
 }
 
-.service:hover {
+.service p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.service:hover,
+.service.active {
     background: #1e3a5f;
     color: white;
-    transform: translateY(-10px);
+    transform: translateY(-12px) scale(1.05);
     filter: grayscale(0%);
+}
+
+.service:hover span,
+.service.active span {
+    transform: scale(1.25);
 }
 
 /* ================= أقسام ================= */
@@ -190,22 +220,23 @@ body {
     text-align: center;
 }
 
-/* ================= أيقونات ================= */
+/* أيقونات التواصل */
 .contact-icons {
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 25px;
 }
 
 .contact-icon {
-    font-size: 36px;
     color: white;
-    transition: 0.3s;
+    font-size: 36px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .contact-icon:hover {
     transform: scale(1.25);
+    opacity: 0.85;
 }
 
 /* ================= واتساب ================= */
@@ -213,23 +244,37 @@ body {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background: #25D366;
+    background-color: #25D366;
     color: white;
     font-size: 28px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     z-index: 9999;
+}
+
+/* ================= أنيميشن ================= */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ================= شاشة التحميل ================= */
 #preloader {
     position: fixed;
     inset: 0;
-    background: white;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,12 +287,12 @@ body {
 }
 
 @keyframes floatLogo {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
+    0% { transform: translateY(0); opacity: 0.7; }
+    50% { transform: translateY(-20px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.7; }
 }
 
-/* ================= موبايل ================= */
+/* ================= موبايل (نهائي) ================= */
 @media (max-width: 768px) {
 
     body {
@@ -261,39 +306,66 @@ body {
 
     .header-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        padding: 10px 0;
     }
 
     .nav {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
+    }
+
+    .nav a {
+        font-size: 14px;
     }
 
     .logo-hero,
     .logo-scroll {
-        max-width: 140px;
-        height: auto;
+        height: 45px;
+        max-width: 150px;
+    }
+
+    .hero {
+        padding: 70px 15px 40px;
+        min-height: 100vh;
+    }
+
+    .overlay {
+        padding: 25px 18px;
     }
 
     .overlay h1 {
         font-size: 22px;
+        line-height: 1.6;
     }
 
     .overlay p {
-        font-size: 15px;
+        font-size: 14px;
+    }
+
+    .overlay button {
+        width: 100%;
+        font-size: 16px;
     }
 
     .service-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .service {
+        padding: 28px 16px;
     }
 
     .service span {
-        font-size: 40px;
+        font-size: 42px;
     }
 
     .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        font-size: 26px;
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+        bottom: 15px;
+        left: 15px;
     }
 }
