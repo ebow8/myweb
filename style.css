@@ -308,4 +308,81 @@ body {
     opacity: 0.85;
 }
 
+/* =================== موبايل =================== */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* الهيدر */
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* الغلاف */
+    .hero .overlay h1 {
+        font-size: 22px;
+        line-height: 1.6;
+    }
+
+    .hero .overlay p {
+        font-size: 15px;
+    }
+
+    .hero .overlay button {
+        width: 80%;
+        font-size: 16px;
+    }
+
+    /* الخدمات */
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service {
+        padding: 30px 15px;
+    }
+
+    .service span {
+        font-size: 40px;
+    }
+
+    /* من نحن */
+    .about {
+        padding: 40px 15px;
+        text-align: center;
+    }
+
+    /* تواصل */
+    .contact-icons {
+        gap: 25px;
+    }
+
+    .contact-icon {
+        font-size: 32px;
+    }
+
+    /* واتساب */
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+    }
+}
+
 
