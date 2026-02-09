@@ -9,25 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
 
 <body>
 
     <!-- شاشة التحميل -->
     <div id="preloader">
-        <img src="logo-color.png" alt="Loading Logo">
+        <img src="images/logo-color.png" alt="Loading Logo">
     </div>
 
-
     <!-- زر واتساب -->
-    <a href="https://wa.me/905318530283" class="whatsapp-float" target="_blank">💬</a>
+    <a href="https://wa.me/905318530283" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- ================= الهيدر الأول (لوغو أبيض كبير) ================= -->
     <header class="header header-hero">
         <div class="header-container">
 
-            <img src="logo-white.png" class="logo-hero" alt="Logo White">
+            <img src="images/logo-white.png" class="logo-hero" alt="Logo White">
 
             <nav class="nav">
                 <a href="#home">الرئيسية</a>
@@ -47,7 +47,6 @@
             </nav>
 
             <a href="#" class="btn">سجل الآن</a>
-
         </div>
     </header>
 
@@ -55,7 +54,7 @@
     <header class="header header-scroll">
         <div class="header-container">
 
-            <img src="logo-color.png" class="logo-scroll" alt="Logo Color">
+            <img src="images/logo-color.png" class="logo-scroll" alt="Logo Color">
 
             <nav class="nav dark">
                 <a href="#home">الرئيسية</a>
@@ -75,7 +74,6 @@
             </nav>
 
             <a href="#" class="btn small">سجل الآن</a>
-
         </div>
     </header>
 
@@ -93,7 +91,6 @@
         <h2>خدماتنا</h2>
 
         <div class="service-grid">
-
             <div class="service">
                 <span>🎓</span>
                 <p>التسجيل في الجامعات التركية</p>
@@ -113,7 +110,6 @@
                 <span>📄</span>
                 <p>ترجمة وتصديق الأوراق</p>
             </div>
-
         </div>
     </section>
 
@@ -121,25 +117,23 @@
     <section class="about fade-up">
         <h2>من نحن</h2>
         <p>نحن شركة متخصصة بمساعدة الطلاب على الدراسة في تركيا.</p>
-       <section id="contact" class="contact fade-up">
-    <h2>تواصل معنا</h2>
+    </section>
 
-    <div class="contact-icons">
+    <!-- ================= تواصل ================= -->
+    <section id="contact" class="contact fade-up">
+        <h2>تواصل معنا</h2>
 
-        <a href="https://wa.me/905318530283" target="_blank" class="contact-icon">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
+        <div class="contact-icons">
+            <a href="https://wa.me/905318530283" target="_blank" class="contact-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
 
-        <a href="https://www.instagram.com/amal.group" target="_blank" class="contact-icon">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
+            <a href="https://www.instagram.com/amal.group" target="_blank" class="contact-icon">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </section>
 
-    </div>
-</section>
-
-
-
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
