@@ -416,4 +416,38 @@ body {
 }
 
 
+.process {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+}
+
+.process h2 {
+    font-size: 34px;
+    margin-bottom: 40px;
+    color: #0b2341;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.step {
+    background: #0b2341;
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.step span {
+    font-size: 28px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 10px;
+}
+
 
