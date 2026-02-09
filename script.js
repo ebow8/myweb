@@ -23,3 +23,12 @@ services.forEach(service => {
         service.classList.add("active");
     });
 });
+
+// ================= SERVICES (MOBILE + DESKTOP) =================
+document.querySelectorAll(".service").forEach(service => {
+    service.addEventListener("click", () => {
+        document.querySelectorAll(".service")
+            .forEach(s => s.classList.remove("active"));
+        service.classList.add("active");
+    });
+});
