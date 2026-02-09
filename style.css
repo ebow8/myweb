@@ -11,13 +11,15 @@ body {
 }
 
 /* ===== الهيدر ===== */
-.header {
-    background: #0b2341;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.hero {
+    height: 100vh;
+    background-image: url("images/hero2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
+
 
 .header-container {
     width: 90%;
@@ -305,4 +307,5 @@ body {
     transform: scale(1.25);
     opacity: 0.85;
 }
+
 
