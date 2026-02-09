@@ -1,149 +1,308 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صنّاع الأمل للدراسة في تركيا</title>
+body {
+    font-family: 'Cairo', sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+/* ================= HEADER ================= */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+    background: rgba(11, 35, 65, 0.95);
+}
 
-<body>
+.header-container {
+    width: 92%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+}
 
-    <!-- شاشة التحميل -->
-    <div id="preloader">
-        <img src="images/logo-color.png" alt="Loading Logo">
-    </div>
+.logo-hero {
+    height: 55px;
+}
 
-    <!-- زر واتساب -->
-    <a href="https://wa.me/905318530283" class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+.nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
 
-    <!-- ================= الهيدر الأول (لوغو أبيض كبير) ================= -->
-    <header class="header header-hero">
-        <div class="header-container">
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-            <img src="images/logo-white.png" class="logo-hero" alt="Logo White">
+.nav a:hover {
+    color: #00c2ff;
+}
 
-            <nav class="nav">
-                <a href="#home">الرئيسية</a>
+.btn {
+    background: #00c2ff;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-                <div class="dropdown">
-                    <a href="#">المقالات ▾</a>
-                    <div class="dropdown-menu">
-                        <a href="#">الدراسة في تركيا</a>
-                        <a href="#">التعليم المفتوح</a>
-                        <a href="#">اختبار DGS</a>
-                        <a href="#">اختبار TYT</a>
-                    </div>
-                </div>
+/* ================= HERO ================= */
+.hero {
+    min-height: 100vh;
+    background: url('images/hero2.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 60px;
+}
 
-                <a href="#services">الخدمات</a>
-                <a href="#contact">تواصل</a>
-            </nav>
+.overlay {
+    background: rgba(0,0,0,0.55);
+    padding: 45px;
+    border-radius: 16px;
+    color: #fff;
+    text-align: center;
+    max-width: 720px;
+}
 
-            <a href="#" class="btn">سجل الآن</a>
-        </div>
-    </header>
+.overlay h1 {
+    font-size: 44px;
+    margin-bottom: 15px;
+}
 
-    <!-- ================= الهيدر الثاني (لوغو ملوّن) ================= -->
-    <header class="header header-scroll">
-        <div class="header-container">
+.overlay p {
+    margin-bottom: 20px;
+}
 
-            <img src="images/logo-color.png" class="logo-scroll" alt="Logo Color">
+.overlay button {
+    padding: 12px 25px;
+    background: #2da6ff;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-            <nav class="nav dark">
-                <a href="#home">الرئيسية</a>
+/* ================= SERVICES ================= */
+.services {
+    padding: 90px 20px;
+    background: #fff;
+    text-align: center;
+}
 
-                <div class="dropdown">
-                    <a href="#">المقالات ▾</a>
-                    <div class="dropdown-menu">
-                        <a href="#">الدراسة في تركيا</a>
-                        <a href="#">التعليم المفتوح</a>
-                        <a href="#">اختبار DGS</a>
-                        <a href="#">اختبار TYT</a>
-                    </div>
-                </div>
+.service-grid {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
 
-                <a href="#services">الخدمات</a>
-                <a href="#contact">تواصل</a>
-            </nav>
+.service {
+    background: #f7f7f7;
+    border-radius: 18px;
+    padding: 50px 25px;
+    transition: 0.3s;
+    filter: grayscale(100%);
+}
 
-            <a href="#" class="btn small">سجل الآن</a>
-        </div>
-    </header>
+.service span {
+    font-size: 70px;
+    display: block;
+    margin-bottom: 20px;
+}
 
-    <!-- ================= الغلاف ================= -->
-    <section id="home" class="hero">
-        <div class="overlay">
-            <h1>ابدأ رحلتك الدراسية في تركيا معنا</h1>
-            <p>نرافقك خطوة بخطوة حتى تحقق حلمك الجامعي</p>
-            <button>سجّل الآن</button>
-        </div>
-    </section>
+.service p {
+    font-size: 20px;
+    font-weight: bold;
+}
 
-    <!-- ================= الخدمات ================= -->
-    <section id="services" class="services fade-up">
-        <h2>خدماتنا</h2>
+.service:hover {
+    background: #1e3a5f;
+    color: #fff;
+    transform: translateY(-10px);
+    filter: grayscale(0%);
+}
 
-        <div class="service-grid">
-            <div class="service">
-                <span>🎓</span>
-                <p>التسجيل في الجامعات التركية</p>
-            </div>
+/* ================= SECTIONS ================= */
+.about {
+    background: #f0f4f8;
+    padding: 80px 20px;
+    text-align: center;
+}
 
-            <div class="service">
-                <span>🏠</span>
-                <p>تأمين سكن طلابي</p>
-            </div>
+.contact {
+    background: #0b1b35;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
 
-            <div class="service">
-                <span>🪪</span>
-                <p>استخراج إقامة طلابية</p>
-            </div>
+/* ================= CONTACT ICONS ================= */
+.contact-icons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
 
-            <div class="service">
-                <span>📄</span>
-                <p>ترجمة وتصديق الأوراق</p>
-            </div>
-        </div>
-    </section>
+.contact-icon {
+    color: #fff;
+    font-size: 36px;
+    transition: 0.3s;
+}
 
-    <!-- ================= من نحن ================= -->
-    <section class="about fade-up">
-        <h2>من نحن</h2>
-        <p>نحن شركة متخصصة بمساعدة الطلاب على الدراسة في تركيا.</p>
-    </section>
+.contact-icon:hover {
+    transform: scale(1.2);
+}
 
-    <!-- ================= تواصل ================= -->
-    <section id="contact" class="contact fade-up">
-        <h2>تواصل معنا</h2>
+/* ================= WHATSAPP ================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: #fff;
+    font-size: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    text-decoration: none;
+}
 
-        <div class="contact-icons">
-            <a href="https://wa.me/905318530283" target="_blank" class="contact-icon">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
+/* ================= PRELOADER ================= */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
 
-            <a href="https://www.instagram.com/amal.group" target="_blank" class="contact-icon">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-        </div>
-    </section>
+#preloader img {
+    width: 180px;
+    animation: floatLogo 1.8s ease-in-out infinite;
+}
 
-    <button class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+@keyframes floatLogo {
+    0% { transform: translateY(0); opacity: 0.7; }
+    50% { transform: translateY(-20px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.7; }
+}
 
-<nav class="nav" id="navMenu">
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
 
+    body {
+        padding-top: 0;
+        overflow-x: hidden;
+    }
 
-    <script src="script.js"></script>
-</body>
-</html>
+    .header {
+        position: relative;
+    }
 
+    .header-container {
+        flex-direction: row;
+        padding: 12px;
+    }
+
+    /* زر ☰ */
+    .menu-toggle {
+        width: 40px;
+        height: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        height: 4px;
+        width: 100%;
+        background: #fff;
+        border-radius: 2px;
+    }
+
+    /* المنيو */
+    .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 25px 0;
+        display: none;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        color: #0b2341;
+        font-size: 18px;
+    }
+
+    .btn {
+        width: 85%;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 70px 15px;
+        min-height: auto;
+    }
+
+    .overlay {
+        padding: 25px;
+    }
+
+    .overlay h1 {
+        font-size: 22px;
+        line-height: 1.6;
+    }
+
+    .overlay p {
+        font-size: 14px;
+    }
+
+    .overlay button {
+        width: 100%;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp-float {
+        left: 15px;
+        bottom: 15px;
+        width: 55px;
+        height: 55px;
+    }
+}
