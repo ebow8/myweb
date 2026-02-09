@@ -1,40 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Admin</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html>
+  <body style="font-family: Arial, sans-serif;">
+    <h2>إعادة تعيين كلمة المرور</h2>
 
-  <!-- Netlify Identity -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <p>اضغط على الزر بالأسفل لتعيين كلمة مرور جديدة:</p>
 
-  <!-- Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
-</head>
+    <p>
+      <a href="{{ .ConfirmationURL }}"
+         style="display:inline-block;padding:12px 20px;background:#007bff;color:#fff;text-decoration:none;border-radius:5px;">
+        تعيين كلمة المرور
+      </a>
+    </p>
 
-<body>
-
-<script>
-  if (window.netlifyIdentity) {
-
-    // هذا السطر هو المفتاح 🔑
-    window.netlifyIdentity.init();
-
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.open();
-      }
-    });
-
-    window.netlifyIdentity.on("login", () => {
-      document.location.href = "/admin/";
-    });
-
-    window.netlifyIdentity.on("logout", () => {
-      document.location.href = "/";
-    });
-  }
-</script>
-
-</body>
+    <p>إذا لم تطلب هذا، تجاهل الرسالة.</p>
+  </body>
 </html>
