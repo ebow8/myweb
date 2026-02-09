@@ -383,6 +383,13 @@ body {
         height: 55px;
         font-size: 26px;
     }
+    @media (max-width: 768px) {
+    body {
+        padding-top: 0 !important;
+    }
 }
+
+}
+
 
 
