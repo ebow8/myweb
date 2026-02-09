@@ -1,308 +1,75 @@
-/* ================= RESET ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صنّاع الأمل</title>
 
-body {
-    font-family: 'Cairo', sans-serif;
-    background: #f4f6f8;
-    color: #222;
-}
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 
-/* ================= HEADER ================= */
-.header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 2000;
-    background: rgba(11, 35, 65, 0.95);
-}
+<body>
 
-.header-container {
-    width: 92%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 0;
-}
+<!-- ===== HEADER ===== -->
+<header class="header">
+    <div class="header-container">
 
-.logo-hero {
-    height: 55px;
-}
+        <img src="images/logo-white.png" class="logo">
 
-.nav {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-}
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-.nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
+        <nav class="nav">
+            <a href="#home">الرئيسية</a>
+            <a href="#services">الخدمات</a>
+            <a href="#contact">تواصل</a>
+            <a href="#" class="btn">سجل الآن</a>
+        </nav>
 
-.nav a:hover {
-    color: #00c2ff;
-}
+    </div>
+</header>
 
-.btn {
-    background: #00c2ff;
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <div class="overlay">
+        <h1>ابدأ رحلتك الدراسية في تركيا معنا</h1>
+        <p>نرافقك خطوة بخطوة حتى تحقق حلمك الجامعي</p>
+        <button>سجّل الآن</button>
+    </div>
+</section>
 
-/* ================= HERO ================= */
-.hero {
-    min-height: 100vh;
-    background: url('images/hero2.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 120px 20px 60px;
-}
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+    <h2>خدماتنا</h2>
 
-.overlay {
-    background: rgba(0,0,0,0.55);
-    padding: 45px;
-    border-radius: 16px;
-    color: #fff;
-    text-align: center;
-    max-width: 720px;
-}
+    <div class="service-grid">
+        <div class="service"><span>🎓</span><p>التسجيل الجامعي</p></div>
+        <div class="service"><span>🏠</span><p>السكن الطلابي</p></div>
+        <div class="service"><span>🪪</span><p>الإقامة</p></div>
+        <div class="service"><span>📄</span><p>ترجمة الأوراق</p></div>
+    </div>
+</section>
 
-.overlay h1 {
-    font-size: 44px;
-    margin-bottom: 15px;
-}
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+    <h2>تواصل معنا</h2>
 
-.overlay p {
-    margin-bottom: 20px;
-}
+    <div class="contact-icons">
+        <a href="https://wa.me/905318530283" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://instagram.com/amal.group" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+</section>
 
-.overlay button {
-    padding: 12px 25px;
-    background: #2da6ff;
-    border: none;
-    color: #fff;
-    border-radius: 6px;
-    cursor: pointer;
-}
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a href="https://wa.me/905318530283" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
-/* ================= SERVICES ================= */
-.services {
-    padding: 90px 20px;
-    background: #fff;
-    text-align: center;
-}
-
-.service-grid {
-    max-width: 1200px;
-    margin: 50px auto 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.service {
-    background: #f7f7f7;
-    border-radius: 18px;
-    padding: 50px 25px;
-    transition: 0.3s;
-    filter: grayscale(100%);
-}
-
-.service span {
-    font-size: 70px;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.service p {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.service:hover {
-    background: #1e3a5f;
-    color: #fff;
-    transform: translateY(-10px);
-    filter: grayscale(0%);
-}
-
-/* ================= SECTIONS ================= */
-.about {
-    background: #f0f4f8;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.contact {
-    background: #0b1b35;
-    color: #fff;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-/* ================= CONTACT ICONS ================= */
-.contact-icons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.contact-icon {
-    color: #fff;
-    font-size: 36px;
-    transition: 0.3s;
-}
-
-.contact-icon:hover {
-    transform: scale(1.2);
-}
-
-/* ================= WHATSAPP ================= */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    color: #fff;
-    font-size: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    text-decoration: none;
-}
-
-/* ================= PRELOADER ================= */
-#preloader {
-    position: fixed;
-    inset: 0;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-}
-
-#preloader img {
-    width: 180px;
-    animation: floatLogo 1.8s ease-in-out infinite;
-}
-
-@keyframes floatLogo {
-    0% { transform: translateY(0); opacity: 0.7; }
-    50% { transform: translateY(-20px); opacity: 1; }
-    100% { transform: translateY(0); opacity: 0.7; }
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-
-    body {
-        padding-top: 0;
-        overflow-x: hidden;
-    }
-
-    .header {
-        position: relative;
-    }
-
-    .header-container {
-        flex-direction: row;
-        padding: 12px;
-    }
-
-    /* زر ☰ */
-    .menu-toggle {
-        width: 40px;
-        height: 32px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    .menu-toggle span {
-        height: 4px;
-        width: 100%;
-        background: #fff;
-        border-radius: 2px;
-    }
-
-    /* المنيو */
-    .nav {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-        padding: 25px 0;
-        display: none;
-    }
-
-    .nav.open {
-        display: flex;
-    }
-
-    .nav a {
-        color: #0b2341;
-        font-size: 18px;
-    }
-
-    .btn {
-        width: 85%;
-        text-align: center;
-    }
-
-    .hero {
-        padding: 70px 15px;
-        min-height: auto;
-    }
-
-    .overlay {
-        padding: 25px;
-    }
-
-    .overlay h1 {
-        font-size: 22px;
-        line-height: 1.6;
-    }
-
-    .overlay p {
-        font-size: 14px;
-    }
-
-    .overlay button {
-        width: 100%;
-    }
-
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .whatsapp-float {
-        left: 15px;
-        bottom: 15px;
-        width: 55px;
-        height: 55px;
-    }
-}
+<script src="script.js"></script>
+</body>
+</html>
