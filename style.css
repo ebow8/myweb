@@ -541,7 +541,7 @@ body {
 @media (max-width: 768px) {
 
     .contact-footer {
-        padding: 60px 15px 50px;
+        padding: 30px 15px 25px;
     }
 
     .contact-footer h2 {
@@ -552,6 +552,7 @@ body {
         font-size: 32px;
     }
 }
+
 
 
 
