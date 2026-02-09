@@ -154,23 +154,86 @@ body {
 }
 
 /* ===== عند المرور ===== */
-.service:hover {
+/* ================= SERVICES FINAL ================= */
+
+/* الحالة الافتراضية: أبيض وأسود + خط عريض */
+.service {
+    background: #f5f5f5;
+    border-radius: 18px;
+    padding: 45px 25px;
+    cursor: pointer;
+
+    filter: grayscale(100%);
+    transform: scale(1);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        filter 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+/* الأيقونة */
+.service span {
+    font-size: 65px;
+    display: block;
+    margin-bottom: 18px;
+    transition: transform 0.35s ease;
+}
+
+/* النص: عريض دائمًا */
+.service p {
+    font-size: 20px;
+    font-weight: 800; /* 👈 خط عريض */
+    transition: color 0.35s ease;
+}
+
+/* ================= DESKTOP HOVER (ماوس فقط) ================= */
+@media (hover: hover) and (pointer: fine) {
+
+    .service:hover {
+        background: linear-gradient(135deg, #0b2341, #123f74);
+        color: #ffffff;
+
+        filter: grayscale(0%);
+        transform: translateY(-12px) scale(1.08); /* 👈 المربع كله يكبر */
+        box-shadow: 0 22px 45px rgba(0,0,0,0.25);
+    }
+
+    .service:hover span {
+        transform: scale(1.2); /* تكبير خفيف للأيقونة */
+    }
+}
+
+/* ================= MOBILE (tap) ================= */
+.service.active {
     background: linear-gradient(135deg, #0b2341, #123f74);
     color: #ffffff;
+
     filter: grayscale(0%);
-    transform: translateY(-15px) scale(1.08);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    transform: scale(1.06);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
 }
 
-/* الأيقونة تنبض */
-.service:hover span {
-    transform: scale(1.35);
-    animation: pulse 1.2s infinite;
+.service.active span {
+    transform: scale(1.2);
 }
 
-/* النص يصير عريض */
-.service:hover p {
-    font-weight: 800;
+/* ================= MOBILE GRID ================= */
+@media (max-width: 768px) {
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service {
+        filter: grayscale(0%);
+    }
+
+    .service span {
+        font-size: 50px;
+    }
 }
 
 /* نبض */
@@ -314,5 +377,6 @@ body {
     50% { transform: scale(1.4); }
     100% { transform: scale(1.2); }
 }
+
 
 
