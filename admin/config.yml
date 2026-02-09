@@ -5,12 +5,15 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
+site_url: https://aquamarine-marzipan-2204e0.netlify.app
+display_url: https://aquamarine-marzipan-2204e0.netlify.app
+
 collections:
   - name: "posts"
     label: "المقالات"
     folder: "posts"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "العنوان", name: "title", widget: "string" }
       - { label: "الصورة", name: "image", widget: "image" }
