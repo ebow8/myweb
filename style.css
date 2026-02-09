@@ -1,3 +1,4 @@
+/* ================= أساسيات ================= */
 * {
     margin: 0;
     padding: 0;
@@ -10,16 +11,28 @@ body {
     color: #222;
 }
 
-/* ===== الهيدر ===== */
-.hero {
+/* ================= الهيدر ================= */
+.header {
     width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    transition: all 0.4s ease;
 }
 
+.header-hero {
+    background: rgba(11, 35, 65, 0.85);
+    padding: 12px 0;
+}
 
+.header-scroll {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 8px 0;
+    transform: translateY(-100%);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
 
 .header-container {
     width: 90%;
@@ -29,8 +42,12 @@ body {
     align-items: center;
 }
 
-.logo img { height: 45px; }
+.logo-hero,
+.logo-scroll {
+    height: 60px;
+}
 
+/* ================= القائمة ================= */
 .nav {
     display: flex;
     gap: 30px;
@@ -43,7 +60,13 @@ body {
     font-weight: 600;
 }
 
-.nav a:hover { color: #00c2ff; }
+.nav a:hover {
+    color: #00c2ff;
+}
+
+.nav.dark a {
+    color: #0b2341;
+}
 
 .btn {
     background: #00c2ff;
@@ -54,8 +77,10 @@ body {
     font-weight: bold;
 }
 
-/* dropdown */
-.dropdown { position: relative; }
+/* ================= Dropdown ================= */
+.dropdown {
+    position: relative;
+}
 
 .dropdown-menu {
     position: absolute;
@@ -68,19 +93,24 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 .dropdown-menu a {
     display: block;
     padding: 14px;
     color: #0b2341;
 }
 
-.dropdown-menu a:hover { background: #f0f4f8; }
-
-/* ===== الغلاف ===== */
+/* ================= الغلاف ================= */
 .hero {
-  background: url('images/hero2.jpg') center/cover no-repeat;
-    padding: 170px 20px;
-    text-align: center;
+    min-height: 100vh;
+    background: url('images/hero2.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .overlay {
@@ -89,13 +119,19 @@ body {
     border-radius: 14px;
     color: white;
     max-width: 720px;
-    margin: auto;
+    text-align: center;
 }
 
-.overlay h1 { font-size: 44px; margin-bottom: 15px; }
-.overlay p { margin-bottom: 20px; }
+.overlay h1 {
+    font-size: 44px;
+    margin-bottom: 15px;
+}
 
-button {
+.overlay p {
+    margin-bottom: 20px;
+}
+
+.overlay button {
     padding: 12px 25px;
     background: #2da6ff;
     border: none;
@@ -104,10 +140,10 @@ button {
     cursor: pointer;
 }
 
-/* ===== الخدمات (مربعات) ===== */
+/* ================= الخدمات ================= */
 .services {
     padding: 90px 20px;
-    background: #ffffff;
+    background: white;
     text-align: center;
 }
 
@@ -115,17 +151,15 @@ button {
     max-width: 1200px;
     margin: 50px auto 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 👈 كلهم بسطر واحد */
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
-
 
 .service {
     background: #f7f7f7;
     border-radius: 18px;
     padding: 50px 25px;
-    cursor: pointer;
-    transition: all 0.35s ease;
+    transition: 0.35s;
     filter: grayscale(100%);
 }
 
@@ -133,28 +167,16 @@ button {
     font-size: 70px;
     display: block;
     margin-bottom: 20px;
-    transition: 0.35s;
 }
 
-.service p {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.service:hover,
-.service.active {
+.service:hover {
     background: #1e3a5f;
     color: white;
-    transform: translateY(-12px) scale(1.05);
+    transform: translateY(-10px);
     filter: grayscale(0%);
 }
 
-.service:hover span,
-.service.active span {
-    transform: scale(1.25);
-}
-
-/* ===== أقسام ===== */
+/* ================= أقسام ================= */
 .about {
     background: #f0f4f8;
     padding: 80px 20px;
@@ -168,154 +190,75 @@ button {
     text-align: center;
 }
 
-/* ===== واتساب ===== */
+/* ================= أيقونات ================= */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.contact-icon {
+    font-size: 36px;
+    color: white;
+    transition: 0.3s;
+}
+
+.contact-icon:hover {
+    transform: scale(1.25);
+}
+
+/* ================= واتساب ================= */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: #25D366;
+    background: #25D366;
     color: white;
     font-size: 28px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
-    z-index: 9999; /* 👈 هذا المهم */
+    justify-content: center;
+    z-index: 9999;
 }
 
-
-/* ===== أنيميشن ===== */
-.fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s;
-}
-
-.fade-up.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* ================= الهيدرين (لوغو أبيض + لوغو ملوّن) ================= */
-
-.header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2000;
-    transition: transform 0.4s ease, background 0.4s ease;
-}
-
-/* الهيدر الأول فوق الغلاف */
-.header-hero {
-    background: rgba(11, 35, 65, 0.85);
-    padding: 12px 0;
-}
-
-/* لوغو أبيض كبير */
-.logo-hero {
-    height: 60px;
-}
-
-/* الهيدر الثاني عند التمرير */
-.header-scroll {
-    background: rgba(255, 255, 255, 0.65); /* شفاف */
-    backdrop-filter: blur(10px);          /* بلوري */
-    -webkit-backdrop-filter: blur(10px);
-    padding: 8px 0;
-    transform: translateY(-100%);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-
-
-/* لوغو ملوّن أصغر */
-.logo-scroll {
-    height: 60px;
-}
-
-/* روابط داكنة بالهيدر الثاني */
-.nav.dark a {
-    color: #0b2341;
-}
-
-.nav.dark a:hover {
-    color: #00c2ff;
-}
-
-/* زر أصغر بالهيدر الثاني */
-.btn.small {
-    padding: 8px 14px;
-    font-size: 14px;
-}
-
-/* مسافة حتى ما يغطي الهيدر المحتوى */
-body {
-    padding-top: 110px;
-}
-/* ===== شاشة التحميل ===== */
+/* ================= شاشة التحميل ================= */
 #preloader {
     position: fixed;
     inset: 0;
-    background: #ffffff;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 100000;
 }
 
-/* الشعار */
 #preloader img {
     width: 180px;
     animation: floatLogo 1.8s ease-in-out infinite;
 }
 
-/* أنيميشن طلوع ونزول */
 @keyframes floatLogo {
-    0% {
-        transform: translateY(0);
-        opacity: 0.7;
-    }
-    50% {
-        transform: translateY(-20px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 0.7;
-    }
-}
-/* أيقونات التواصل */
-.contact-icons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
 }
 
-.contact-icon {
-    color: #ffffff;
-    font-size: 36px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.contact-icon:hover {
-    transform: scale(1.25);
-    opacity: 0.85;
-}
-
-/* =================== موبايل =================== */
+/* ================= موبايل ================= */
 @media (max-width: 768px) {
 
     body {
+        padding-top: 0;
         overflow-x: hidden;
     }
 
-    /* الهيدر */
+    .header {
+        position: relative;
+    }
+
     .header-container {
         flex-direction: column;
         gap: 15px;
@@ -326,101 +269,31 @@ body {
         gap: 10px;
     }
 
-    .btn {
-        width: 100%;
-        text-align: center;
+    .logo-hero,
+    .logo-scroll {
+        max-width: 140px;
+        height: auto;
     }
 
-    /* الغلاف */
-    .hero .overlay h1 {
+    .overlay h1 {
         font-size: 22px;
-        line-height: 1.6;
     }
 
-    .hero .overlay p {
+    .overlay p {
         font-size: 15px;
     }
 
-    .hero .overlay button {
-        width: 80%;
-        font-size: 16px;
-    }
-
-    /* الخدمات */
     .service-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .service {
-        padding: 30px 15px;
     }
 
     .service span {
         font-size: 40px;
     }
 
-    /* من نحن */
-    .about {
-        padding: 40px 15px;
-        text-align: center;
-    }
-
-    /* تواصل */
-    .contact-icons {
-        gap: 25px;
-    }
-
-    .contact-icon {
-        font-size: 32px;
-    }
-
-    /* واتساب */
     .whatsapp-float {
-        bottom: 15px;
-        right: 15px;
         width: 55px;
         height: 55px;
         font-size: 26px;
     }
-    @media (max-width: 768px) {
-    body {
-        padding-top: 0 !important;
-    }
 }
-
-}
-@media (max-width: 768px) {
-
-    .header {
-        position: relative;
-    }
-
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .nav a {
-        font-size: 14px;
-    }
-
-    .logo-hero,
-    .logo-scroll {
-        max-width: 140px;
-        height: auto;
-    }
-}
-
-
-
-
-
-
