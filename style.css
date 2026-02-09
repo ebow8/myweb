@@ -390,6 +390,36 @@ body {
 }
 
 }
+@media (max-width: 768px) {
+
+    .header {
+        position: relative;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .logo-hero,
+    .logo-scroll {
+        max-width: 140px;
+        height: auto;
+    }
+}
+
+
 
 
 
