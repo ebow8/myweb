@@ -378,5 +378,42 @@ body {
     100% { transform: scale(1.2); }
 }
 
+.why-us {
+    padding: 80px 20px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #0b2341;
+}
+
+.why-desc {
+    color: #6b7280;
+    margin-bottom: 40px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.why-box {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.why-box h3 {
+    color: #0b2341;
+    margin-bottom: 10px;
+}
+
 
 
