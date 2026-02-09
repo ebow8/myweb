@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/articles"
+public_folder: "/images/articles"
+
+collections:
+  - name: "articles"
+    label: "المقالات"
+    folder: "articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "الصورة الرئيسية", name: "image", widget: "image" }
+      - { label: "المحتوى", name: "body", widget: "markdown" }
+      - { label: "تاريخ النشر", name: "date", widget: "datetime" }
