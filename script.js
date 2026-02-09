@@ -46,3 +46,7 @@ window.addEventListener("load", () => {
         preloader.style.display = "none";
     }, 500);
 });
+function toggleMenu() {
+    document.querySelector(".nav").classList.toggle("open");
+}
+
