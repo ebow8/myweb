@@ -489,5 +489,70 @@ body {
     transform: scale(1.25);
     color: #00c2ff;
 }
+/* ====== تواصل معنا (Footer Contact) ====== */
+
+.contact-footer {
+    background: #0b2341;
+    color: #ffffff;
+    padding: 80px 20px 60px;
+    text-align: center;
+    width: 100%;
+}
+
+.contact-footer h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+/* أيقونات التواصل */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin-top: 20px;
+}
+
+.contact-icons a {
+    color: #ffffff;
+    font-size: 38px;
+    transition: 
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+/* حركة عند المرور */
+.contact-icons a:hover {
+    color: #00c2ff;
+    transform: scale(1.25);
+}
+
+/* ====== الفوتر السفلي ====== */
+.footer {
+    background: #081a30;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 14px;
+}
+
+/* ====== موبايل ====== */
+@media (max-width: 768px) {
+
+    .contact-footer {
+        padding: 60px 15px 50px;
+    }
+
+    .contact-footer h2 {
+        font-size: 24px;
+    }
+
+    .contact-icons a {
+        font-size: 32px;
+    }
+}
+
+
 
 
